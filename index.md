@@ -1,37 +1,49 @@
-## Welcome to GitHub Pages
+#include <iostream>
 
-You can use the [editor on GitHub](https://github.com/jesusandpals777/lab_20/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+using namespace std;
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+void getNumbers(double num1, double num2, double num3, double num4, double &avg, double &max, double &min){
+  
+avg = (num1 + num2 + num3 + num4)/4;
 
-### Markdown
+max = num1;
+if(max < num2)
+max = num2;
+if(max < num3)
+max = num3;
+if(max < num4)
+max = num4;
+  
+  
+min = num1;
+if(min > num2)
+min = num2;
+if(min > num3)
+min = num3;
+if(min > num4)
+min = num4;
+}
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+int main()
+{
+double num1 = 4.6, num2=3.7, num3 = -1.7, num4 = -7.8, avg, min, max;
+cout<<"\nPlease enter four numbers:";
+cout << "\nNumber 1:" << endl;
+cin>> num1;
 
-```markdown
-Syntax highlighted code block
+cout << "\nNumber 2:" << endl;
+cin>> num2;
 
-# Header 1
-## Header 2
-### Header 3
+cout << "\nNumber 3:" << endl;
+cin>> num3;
 
-- Bulleted
-- List
+cout << "\nNumber 4:" << endl;
+cin>> num4;
 
-1. Numbered
-2. List
+getNumbers(num1, num2, num3, num4, avg, max, min);
+cout<<"\nMinimum is "<< min;
+cout<<"\nMaximum is "<<max;
+cout<<"\nAverage is "<<avg;
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jesusandpals777/lab_20/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+return 0;
+}
